@@ -9,16 +9,28 @@ WHY THIS EXISTS:
 """
 
 import random
+import os
+from groq import Groq
+
+
+# Initialize Groq client
+# API key is read from environment variable for security
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+if GROQ_API_KEY:
+    groq_client = Groq(api_key=GROQ_API_KEY)
+else:
+    groq_client = None
 
 
 def generate_answer(question: str, model_name: str) -> str:
     """
-    Generate an answer using the selected model (placeholder).
+    Generate an answer using the selected Groq model.
     
-    WHY PLACEHOLDER:
-    - We can't call real APIs without credentials and network access
-    - This demonstrates the expected output structure
-    - In production, this would call OpenAI, Claude, or another API
+    WHY GROQ:
+    - Fast and cheap inference
+    - Good for cost optimization testing
+    - Supports multiple models (mixtral, llama, etc.)
+    - Easy to integrate
     
     Args:
         question: The user's question
@@ -28,21 +40,48 @@ def generate_answer(question: str, model_name: str) -> str:
         Generated answer as a string
     """
     
-    # Placeholder: Simple rule-based answers for demonstration
-    # In production, this would call an LLM API
-    
-    model_prefix = {
-        "small": "[GPT-3.5-mini] ",
-        "large": "[GPT-4] "
+    # Map our model names to Groq model IDs
+    # Available models at: https://console.groq.com/docs/models
+    groq_models = {
+        "small": "llama-3.1-8b-instant",     # Fast, cheap model
+        "large": "llama-3.1-70b-versatile"   # More capable, higher cost
     }
     
-    if len(question.split()) < 10:
-        # Simple questions get short answers
-        return model_prefix.get(model_name, "") + f"Quick answer to: {question[:30]}... This is a concise response."
-    else:
-        # Complex questions get longer answers
-        return model_prefix.get(model_name, "") + f"Detailed answer to: {question[:50]}... " \
-               f"This response includes multiple perspectives and deeper analysis of the topic."
+    selected_groq_model = groq_models.get(model_name, "mixtral-8x7b-32768")
+    
+    # If no API key, fall back to placeholder
+    if not groq_client:
+        model_prefix = {
+            "small": "[Mixtral-8x7b] ",
+            "large": "[Mixtral-8x7b] "
+        }
+        
+        if len(question.split()) < 10:
+            return model_prefix.get(model_name, "") + f"Quick answer to: {question[:30]}... This is a concise response."
+        else:
+            return model_prefix.get(model_name, "") + f"Detailed answer to: {question[:50]}... " \
+                   f"This response includes multiple perspectives and deeper analysis of the topic."
+    
+    # Call real Groq API
+    try:
+        chat_completion = groq_client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": question
+                }
+            ],
+            model=selected_groq_model,
+            max_tokens=500 if model_name == "small" else 1000,
+            temperature=0.7,
+        )
+        
+        answer = chat_completion.choices[0].message.content
+        return answer
+    
+    except Exception as e:
+        # Fallback if API call fails
+        return f"Error calling Groq API: {str(e)}"
 
 
 def calculate_quality_score(answer: str, question: str) -> float:

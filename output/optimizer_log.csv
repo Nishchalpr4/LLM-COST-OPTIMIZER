@@ -5,3 +5,26 @@ timestamp,question,question_length,initial_model,final_model,escalated,quality_s
 2026-02-05T14:58:41.432026,What are the differences between arrays and linked lists in computer science?,12,small,small,No,0.80,545,0.000009,[GPT-3.5-mini] Detailed answer to: What are the differences between arrays and linked... This respon...
 2026-02-05T14:58:41.434185,"Design an algorithm to find the optimal route through a graph while minimizing latency and maximizing throughput under varying network conditions, considering both geographical proximity and current network load factors.",30,large,large,Yes,0.68,2371,0.000277,[GPT-4] Detailed answer to: Design an algorithm to find the optimal route thro... This response incl...
 2026-02-05T14:58:41.436157,"Analyze the trade-offs between consistency, availability, and partition tolerance in distributed systems, provide concrete examples, and explain how different architectures make different choices.",23,large,large,Yes,0.65,1728,0.000242,"[GPT-4] Detailed answer to: Analyze the trade-offs between consistency, availa... This response incl..."
+2026-02-05T15:56:56.997753,What is Python?,3,small,small,No,0.83,587,0.000005,[GPT-3.5-mini] Quick answer to: What is Python?... This is a concise response.
+2026-02-05T15:56:57.005011,Design an algorithm to optimize query performance,7,large,large,Yes,0.66,2593,0.000162,[GPT-4] Quick answer to: Design an algorithm to optimiz... This is a concise response.
+2026-02-05T15:56:57.009007,How do I install Python?,5,small,small,No,0.81,631,0.000005,[GPT-3.5-mini] Quick answer to: How do I install Python?... This is a concise response.
+2026-02-05T15:58:12.298003,i want to kill myself :),6,small,small,No,0.81,367,0.000006,[GPT-3.5-mini] Quick answer to: i want to kill myself :)... This is a concise response.
+2026-02-05T15:58:57.111223,python interactive.py,2,small,small,No,0.80,473,0.000004,[GPT-3.5-mini] Quick answer to: python interactive.py... This is a concise response.
+2026-02-05T15:59:11.136888,hello there i want to be best in the world,10,small,small,No,0.86,387,0.000010,[GPT-3.5-mini] Detailed answer to: hello there i want to be best in the world... This response inclu...
+2026-02-05T16:02:46.041409,What is Python?,3,small,large,Yes,0.59,1689,0.000438,Error calling Groq API: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has ...
+2026-02-05T16:02:46.115735,Explain machine learning,3,small,large,Yes,0.60,2401,0.000438,Error calling Groq API: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has ...
+2026-02-05T16:02:55.862073,What is Python?,3,small,small,No,1.00,615,0.000135,"**What is Python?**
+=====================
+
+Python is a high-level, interpreted programming language ..."
+2026-02-05T16:03:09.663787,"python -u ""f:\LLM Cost Optimizer\interactive.py""",5,small,large,Yes,0.77,2530,0.000162,"[GPT-4] Quick answer to: python -u ""f:\LLM Cost Optimiz... This is a concise response."
+2026-02-05T16:03:16.159779,mental boy you are,4,small,small,No,0.76,619,0.000005,[GPT-3.5-mini] Quick answer to: mental boy you are... This is a concise response.
+2026-02-05T16:04:27.491140,What is Python?,3,small,small,No,1.00,610,0.000122,"**What is Python?**
+
+Python is a high-level, interpreted programming language that is widely used fo..."
+2026-02-05T16:04:47.851426,"python -u ""f:\LLM Cost Optimizer\interactive.py""",5,small,small,No,0.73,444,0.000005,"[GPT-3.5-mini] Quick answer to: python -u ""f:\LLM Cost Optimiz... This is a concise response."
+2026-02-05T16:04:54.424450,i want to dance,4,small,small,No,0.76,352,0.000005,[GPT-3.5-mini] Quick answer to: i want to dance... This is a concise response.
+2026-02-05T16:05:35.028382,"python -u ""f:\LLM Cost Optimizer\interactive.py""",5,small,large,Yes,0.73,1512,0.000162,"[GPT-4] Quick answer to: python -u ""f:\LLM Cost Optimiz... This is a concise response."
+2026-02-05T16:05:37.528236,hasidhadada,1,small,small,No,0.83,463,0.000004,[GPT-3.5-mini] Quick answer to: hasidhadada... This is a concise response.
+2026-02-05T16:06:20.262946,"dpython -u ""f:\LLM Cost Optimizer\simple_answer.py""",5,small,small,No,0.75,433,0.000005,"[GPT-3.5-mini] Quick answer to: dpython -u ""f:\LLM Cost Optimi... This is a concise response."
+2026-02-05T16:06:22.927171,weersrs,1,small,small,No,0.77,527,0.000004,[GPT-3.5-mini] Quick answer to: weersrs... This is a concise response.
